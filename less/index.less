@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+.evaluation {
+    overflow: hidden;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    .totalMark {
+        float: left;
+        text-align: center;
+        width: 50%;
+        .roundBox {
+            position: relative;
+            width: 72px;
+            height: 72px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background-color: #ff6600;
+            &::before,
+            .roundInner,
+            .roundText,
+            .roundLeft,
+            .roundRight {
+                position: absolute;
+            }
+            .roundInner {
+                display: none;
+                top: 25%;
+                right: -25%;
+                z-index: 4;
+                -webkit-transform:rotate(-90deg);
+                transform:rotate(-90deg);
+                background-color: #ff6600;
+                width: 100%;
+                height: 50%;
+                border-radius: 0 0 36px 36px;
+            }
+            .roundText {
+                top: 2px;
+                left: 2px;
+                z-index: 5;
+                background-color: #ffffff;
+                width: 68px;
+                height: 68px;
+                text-align: center;
+                border-radius: 50%;
+                font-size: 12;
+                p:first-child {
+                    margin-top: 5px;
+                }
+                .fraction {
+                    color: #ff6600;
+                }
+                .percentage {
+                    color: #dddddd;
+                }
+            }
+            .roundLeft,
+            .roundRight {
+                -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 50%;
+                    margin-top: 25%;
+                    border-radius: 0 0 36px 36px;
+                    background-color: #ffffff;
+                }
+            }
+            .roundLeft {
+                z-index: 3;
+                &::after {
+                    -webkit-transform:rotate(90deg);
+                    transform:rotate(90deg);
+                    margin-left: -25%;
+                }
+            }
+            .roundRight {
+                z-index: 2;
+                &::after {
+                    transform:rotate(-90deg);
+                    -webkit-transform:rotate(-90deg);
+                    margin-left: 25%;
+                }
+            }
+        }
+    }
+}
